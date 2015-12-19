@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageAdmin.master.cs" Inherits="NWCMADemoApp.Pages.MasterPages.MasterPageAdmin" %>
+<%@ Import Namespace="NWCMADemoApp.Models.AdminModel" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../../Content/MyCSS.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+       <form id="form1" runat="server">
+        <%
+            
+         //   string codeUser = (string)Session["adminEmail"];
+            
+            if (Session["loginInformation"] != null)
+            {
+                LoginModel loginModel = (LoginModel)Session["loginInformation"];
+                if (loginModel.LoginType == 1)
+                {
+                    operarionDiv.Style.Add("display", "inline");
+                    logoutEvent.Style.Add("display", "inline");
+                    userInformation.InnerText = loginModel.LoginName;
+                    loginEvent.Style.Add("display", "none");
+                    centerLoginDiv.Style.Add("display", "none");
+                    
+                }
+                else
+                {
+                    operarionDiv.Style.Add("display", "none");
+                    logoutEvent.Style.Add("display", "inline");
+                    userInformation.InnerText = loginModel.LoginName;
+                    loginEvent.Style.Add("display", "none");
+                    centerLoginDiv.Style.Add("display", "inline"); 
+                }                                               
+            }
+            else
+            {
+                operarionDiv.Style.Add("display", "none");
+                logoutEvent.Style.Add("display", "none");
+                centerLoginDiv.Style.Add("display", "none");
+            }
+        %>
+        <div class="container">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">CMA</a>
+                </div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav">
+                         <li><a href="../Admin/AdminHome.aspx">Home</a></li>
+                        <div class="nav navbar-nav" id="operarionDiv" runat="server">
+                           
+                         <li><a href="../Admin/MedicineEntry.aspx">Medicine Entry</a></li>   
+                        <li><a href="DiseaseEntry.aspx">Disease Entry</a></li>
+                        <li><a href="CreateCenter.aspx">Create Center</a></li>
+                             <li><a href="SendMedicine.aspx">Send Medicine</a></li>
+                            <li><a href="../Admin/TreatmentHistory.aspx">Patient History</a></li>                                                                      
+                            
+                       <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Report
+               <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="DiseaseWiseReport.aspx">Disease Wise Report</a></li>                            
+               <li class="divider"></li>
+               <li><a href="DiseaseDemographicReport.aspx">Disease Demographic Report</a></li>               
+            </ul>
+         </li>                             
+    </div>
+                        <div class="nav navbar-nav" id="centerLoginDiv" runat="server">
+                        
+                         <li><a href="../Center/TreatmentHistory.aspx">Patient History</a></li>
+                         <li><a href="../Center/DoctorEntry.aspx">Doctor Entry</a></li>
+                         <li><a href="../Center/MedicineStockReport.aspx">Medicine Stock Report</a></li>
+                         <li><a href="../Center/Treatment.aspx">Treatment</a></li>
+                         </div>
+                        
+
+                       
+   <li class="active" id="loginEvent" runat="server"><a href="Login.aspx">Login</a></li>
+                       
+                        
+
+                    </ul>
+                    <p class="navbar-text navbar-right" id="userInformation" runat="server">       
+                        
+                    </p>
+                    <p class="navbar-text navbar-right" id="logoutEvent" runat="server">        
+                       <%-- <asp:LinkButton ID="logOutButton" runat="server" OnClick="logOutButton_OnClick">Logout</asp:LinkButton>--%>
+                   <a runat="server" id="logOutButton" OnServerClick="logOutButton_OnServerClick">Logout</a>
+                         </p>
+                </div>
+            </nav>
+           
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+           
+        </div>
+    </form>
+    <script src="../../Scripts/jquery-1.9.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+</body>
+</html>

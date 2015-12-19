@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1C26206-76BA-462D-B5F1-8E0158B2819A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NWCMADemoApp</RootNamespace>
+    <AssemblyName>NWCMADemoApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pages\Admin\AdminHome.aspx" />
+    <Content Include="Pages\Admin\CreatedCenterInformation.aspx" />
+    <Content Include="Pages\Admin\Login.aspx" />
+    <Content Include="Pages\MasterPages\MasterPageAdmin.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MyCSS.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Pages\Admin\CreateCenter.aspx" />
+    <Content Include="Pages\Admin\DiseaseDemographicReport.aspx" />
+    <Content Include="Pages\Admin\DiseaseEntry.aspx" />
+    <Content Include="Pages\Admin\DiseaseWiseReport.aspx" />
+    <Content Include="Pages\Admin\MedicineEntry.aspx" />
+    <Content Include="Pages\Admin\SendMedicine.aspx" />
+    <Content Include="Pages\Admin\TreatmentHistory.aspx" />
+    <Content Include="Pages\Center\DoctorEntry.aspx" />
+    <Content Include="Pages\Center\MedicineStockReport.aspx" />
+    <Content Include="Pages\Center\Treatment.aspx" />
+    <Content Include="Pages\Center\TreatmentHistory.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\calenderScripts.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\Admin\CreateCenterBLL.cs" />
+    <Compile Include="BLL\Admin\DiseaseEntryBLL.cs" />
+    <Compile Include="BLL\Admin\LoginBLL.cs" />
+    <Compile Include="BLL\Admin\MedicineEntryBLL.cs" />
+    <Compile Include="BLL\Admin\SendMedicineBLL.cs" />
+    <Compile Include="BLL\Center\DoctorEntryBLL.cs" />
+    <Compile Include="BLL\Center\DoseBLL.cs" />
+    <Compile Include="BLL\Center\MedicineStockBLL.cs" />
+    <Compile Include="BLL\Center\PatientBLL.cs" />
+    <Compile Include="BLL\Center\PatientHistoryBLL.cs" />
+    <Compile Include="BLL\Center\TreatmentBll.cs" />
+    <Compile Include="DAL\Admin\CreateCenterDAL.cs" />
+    <Compile Include="DAL\Admin\DiseaseEntryDAL.cs" />
+    <Compile Include="DAL\Admin\LoginDAL.cs" />
+    <Compile Include="DAL\Admin\MedicineEntryDAL.cs" />
+    <Compile Include="DAL\Admin\SendMedicineDAL.cs" />
+    <Compile Include="DAL\Center\DoctorEntryDAL.cs" />
+    <Compile Include="DAL\Center\DoseDAL.cs" />
+    <Compile Include="DAL\Center\MedicineStockDAL.cs" />
+    <Compile Include="DAL\Center\PatientDAL.cs" />
+    <Compile Include="DAL\Center\PatientHistoryDAL.cs" />
+    <Compile Include="DAL\Center\TreatmentDal.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminModel\CenterModel.cs" />
+    <Compile Include="Models\AdminModel\DiseaseModel.cs" />
+    <Compile Include="Models\AdminModel\DistrictModel.cs" />
+    <Compile Include="Models\AdminModel\LoginModel.cs" />
+    <Compile Include="Models\AdminModel\MedicineModel.cs" />
+    <Compile Include="Models\AdminModel\SendMedicineModel.cs" />
+    <Compile Include="Models\AdminModel\ThanaModel.cs" />
+    <Compile Include="Models\CenterModel\DoctorModel.cs" />
+    <Compile Include="Models\CenterModel\DoseModel.cs" />
+    <Compile Include="Models\CenterModel\MedicineStockModel.cs" />
+    <Compile Include="Models\CenterModel\PatientHistoryModel.cs" />
+    <Compile Include="Models\CenterModel\PatientInformationModel.cs" />
+    <Compile Include="Models\CenterModel\PatientModel.cs" />
+    <Compile Include="Models\CenterModel\TreatmentModel.cs" />
+    <Compile Include="Pages\Admin\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\CreateCenter.aspx.cs">
+      <DependentUpon>CreateCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\CreateCenter.aspx.designer.cs">
+      <DependentUpon>CreateCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\CreatedCenterInformation.aspx.cs">
+      <DependentUpon>CreatedCenterInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\CreatedCenterInformation.aspx.designer.cs">
+      <DependentUpon>CreatedCenterInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\DiseaseDemographicReport.aspx.cs">
+      <DependentUpon>DiseaseDemographicReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\DiseaseDemographicReport.aspx.designer.cs">
+      <DependentUpon>DiseaseDemographicReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\DiseaseEntry.aspx.cs">
+      <DependentUpon>DiseaseEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\DiseaseEntry.aspx.designer.cs">
+      <DependentUpon>DiseaseEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\DiseaseWiseReport.aspx.cs">
+      <DependentUpon>DiseaseWiseReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\DiseaseWiseReport.aspx.designer.cs">
+      <DependentUpon>DiseaseWiseReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\MedicineEntry.aspx.cs">
+      <DependentUpon>MedicineEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\MedicineEntry.aspx.designer.cs">
+      <DependentUpon>MedicineEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\SendMedicine.aspx.cs">
+      <DependentUpon>SendMedicine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\SendMedicine.aspx.designer.cs">
+      <DependentUpon>SendMedicine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\TreatmentHistory.aspx.cs">
+      <DependentUpon>TreatmentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\TreatmentHistory.aspx.designer.cs">
+      <DependentUpon>TreatmentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Center\DoctorEntry.aspx.cs">
+      <DependentUpon>DoctorEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Center\DoctorEntry.aspx.designer.cs">
+      <DependentUpon>DoctorEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Center\MedicineStockReport.aspx.cs">
+      <DependentUpon>MedicineStockReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Center\MedicineStockReport.aspx.designer.cs">
+      <DependentUpon>MedicineStockReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Center\Treatment.aspx.cs">
+      <DependentUpon>Treatment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Center\Treatment.aspx.designer.cs">
+      <DependentUpon>Treatment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Center\TreatmentHistory.aspx.cs">
+      <DependentUpon>TreatmentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Center\TreatmentHistory.aspx.designer.cs">
+      <DependentUpon>TreatmentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterPages\MasterPageAdmin.Master.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterPages\MasterPageAdmin.Master.designer.cs">
+      <DependentUpon>MasterPageAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="PDFDocument\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1103</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1103/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
